@@ -57,4 +57,4 @@ Eggnog
 
 **Previous: [Day 1: Inventory Management](../01/)**
 
-**Next: [Day 3: Evil Elf](../02/)**
+**Next: [Day 3: Evil Elf](../03/)**
