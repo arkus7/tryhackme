@@ -1,176 +1,30 @@
-# 25 days of Christmas
+# Advent of Cyber
 
-## Day 1: Inventory Management
+Get started with Cyber Security in 25 Days - Learn the basics by doing a new, beginner friendly security challenge every day leading up to Christmas.
 
-[Support materials](https://docs.google.com/document/d/1PHs7uRS1whLY9tgxH1lj-bnEVWtXPXpo45zWUlbknpU/edit)
+![Christmas Tree](https://tryhackme.com/img/events/christmas/tree.png "Christmas Tree")
+## [The Story]
 
-### 1. What is the name of the cookie used for authentication?
 
-Inspect cookies in browser developer view.
+Just before the lead up to Christmas, Santa’s company(The Best Festival Company) has been compromised by his nemesis(The Christmas Monster). Luckily, one of Santa’s elf team have a background in security. Can they recover all their systems before the lead up to Christmas?
 
-Answer:
-```
-authid
-```
 
-### 2. If you decode the cookie, what is the value of the fixed part of the cookie?
+It’s the evening of 30th November - the air in the arctic circle is filled with excitement, as every year. This year has been even smoother than previous years - Santa’s digitalisation program has made lives easier for everyone in the company. Elf McElferson, the CTO of the arctic circle, starts doing a couple of last minute checks; **everything has to be operating successfully running up to Christmas**. With her warm hot chocolate next to his desk, all she needs to do is open the health dashboard and grin at all the green lights. She enters the URL on the dashboard and leans in closer to the screen, anxiously waiting for confirmation. The page loads faster than expected and she gets the initial glimpse of all green. **Wait, the first indicator moves to red, and every other one follows the same.**
 
-Register different users with different usernames and decode the cookie value for each of them -> username is part of the cookie value but there is some common part for all of them.
 
-```bash
-echo dXNlcm5hbWV2NGVyOWxsMSFzcw== | base64 -d
-```
+In less than a minute, she and all her colleagues receive the following email:
 
-Answer:
-```
-v4er9ll1!ss
-```
 
-### 3. After accessing his account, what did the user mcinventory request?
 
-Login as `mcinventory` user by preparing user cookie:
-`${username}v4er9ll1!ss`
+>Hey Crew! We know that this is the busiest time of your year. What a shame though - it looks like all of you are locked out of your systems and can’t do any work. Boo hoo for Christmas Santa’s Fav Nemesis, Christmas Monster
 
-```bash
-echo "mcinventoryv4er9ll1!ss" | base64
-```
 
-Answer:
-```
-firewall
-```
+McElferson jumps out of her seat and yells. This cannot be happening. How is she supposed to fix this - it’s only 25 days till Christmas and no one can do anything. She goes to the only person who knows about security on his team, Elf McSkidy(you), and asks them to use their l33t skills to fix this. **They clearly have a big task ahead of themselves.**
 
-## Day 2: Arctic Forum
+---
 
-[Support materials - Brute Forcing Directories](https://docs.google.com/document/d/1622ejYtCmLOS0zd16CyfhA1xgQk8l55gYWMY8fnpHfQ/edit)
+## Tasks
 
-### 1. What is the path of the hidden page?
-
-Run dirsearch
-
-```bash
-./dirsearch.py -u http://$IP:3000 -e html -w ~/Downloads/DirBuster-Lists/directory-list-2.3-medium.txt
-```
-
-_Note: It took almost 8 minutes to find this directory_
-
-Answer:
-```
-/sysadmin
-```
-
-### 2. What is the password you found?
-
-After accessing `/sysadmin` open page source - there is a comment
-
-```html
-    <!--
-    Admin portal created by arctic digital design - check out our github repo
-    -->
-```
-
-When you google `arctic digital design` there is a [link to the repository](https://github.com/ashu-savani/arctic-digital-design) where in README.md file is the login and password.
-
-Answer:
-```
-defaultpass
-```
-
-### 3. What do you have to take to the 'partay'
-
-Login with credentials from the step above -> there is a note what you need to bring to the 'partay'
-
-Answer:
-```
-Eggnog
-```
-
-## Day 3: Evil Elf
-
-[Supporting materials - Wireshark and Password Cracking](https://docs.google.com/document/d/1ZVsOtW7mM-4neZZ4QtYCEp__exiMrvlUCXTxhB-zyxk/edit)
-
-### 1. Whats the destination IP on packet number 998?
-
-Open file in Wireshark -> check Destination column of 998th packet.
-
-Answer:
-```
-63.32.89.195
-```
-
-### 2. What item is on the Christmas list?
-
-Filter packets by telnet. There are 3 packets. In the first one (#2255) there is a command visible in packet data:
-
-```bash
-echo 'ps4' > christmas_list.txt
-```
-
-Answer:
-```
-ps4
-```
-
-### 3. Crack buddy's password!
-
-In the second telnet packet (#2906) we can see that `/etc/shadow` file was printed on the console. This file contains password hashes.
-
-```sh
-cat /etc/shadow
-```
-
-In the next telnet packet (#2908) we can see the results of this command. We can see that the packet data contains hash of the `buddy` user's password hash.
-
-```sh
-root:*:18171:0:99999:7:::
-daemon:*:18171:0:99999:7:::
-bin:*:18171:0:99999:7:::
-sys:*:18171:0:99999:7:::
-sync:*:18171:0:99999:7:::
-games:*:18171:0:99999:7:::
-man:*:18171:0:99999:7:::
-lp:*:18171:0:99999:7:::
-mail:*:18171:0:99999:7:::
-news:*:18171:0:99999:7:::
-uucp:*:18171:0:99999:7:::
-proxy:*:18171:0:99999:7:::
-www-data:*:18171:0:99999:7:::
-backup:*:18171:0:99999:7:::
-list:*:18171:0:99999:7:::
-irc:*:18171:0:99999:7:::
-gnats:*:18171:0:99999:7:::
-nobody:*:18171:0:99999:7:::
-systemd-network:*:18171:0:99999:7:::
-systemd-resolve:*:18171:0:99999:7:::
-syslog:*:18171:0:99999:7:::
-messagebus:*:18171:0:99999:7:::
-_apt:*:18171:0:99999:7:::
-lxd:*:18171:0:99999:7:::
-uuidd:*:18171:0:99999:7:::
-dnsmasq:*:18171:0:99999:7:::
-landscape:*:18171:0:99999:7:::
-sshd:*:18171:0:99999:7:::
-pollinate:*:18171:0:99999:7:::
-ubuntu:!:18232:0:99999:7:::
-buddy:$6$3GvJsNPG$ZrSFprHS13divBhlaKg1rYrYLJ7m1xsYRKxlLh0A1sUc/6SUd7UvekBOtSnSyBwk3vCDqBhrgxQpkdsNN6aYP1:18233:0:99999:7:::
-```
-
-Save hash to the file
-```sh
-echo '$6$3GvJsNPG$ZrSFprHS13divBhlaKg1rYrYLJ7m1xsYRKxlLh0A1sUc/6SUd7UvekBOtSnSyBwk3vCDqBhrgxQpkdsNN6aYP1' > hash.txt
-```
-
-_Note: use single quotes, instead the `$6$3` is evaluated before writing to file as environmental variables -> hash is invalid._
-
-Check the method number for cracking by comparing the first characters from the hash to the example hashes [on this site](https://hashcat.net/wiki/doku.php?id=example_hashes) - `$6` for `hashcat` is `1800`.
-
-And start cracking using `hashcat` and wordlist from `rockyou`
-
-```sh
-hashcat -m 1800 hash.txt ~/Downloads/rockyou.txt --force --status
-```
-
-Answer:
-```
-rainbow
-```
+1. [Day 1: Inventory management](./01/) - Authorization, Cookies and intercepting requests
+2. [Day 2: Arctic Forum](./02/) - Directory search, looking for sensitive information 
+3. [Day 3: Evil Elf](./03/) - Wireshark & Password cracking
