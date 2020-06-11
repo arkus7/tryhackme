@@ -54,5 +54,7 @@ Eggnog
 ------
 
 **Main: [The Story](../)**
-**Previous: [Day 1: Inventory Management](../01/)
+
+**Previous: [Day 1: Inventory Management](../01/)**
+
 **Next: [Day 3: Evil Elf](../02/)**

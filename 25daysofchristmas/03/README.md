@@ -94,5 +94,8 @@ Answer:
 rainbow
 ```
 
+------
+
 **Main: [The Story](../)**
-**Previous: [Day 2: Arctic Forum](../02/)
+
+**Previous: [Day 2: Arctic Forum](../02/)**
