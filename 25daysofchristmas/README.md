@@ -28,3 +28,5 @@ McElferson jumps out of her seat and yells. This cannot be happening. How is she
 1. [Day 1: Inventory management](./01/) - Authorization, Cookies and intercepting requests
 2. [Day 2: Arctic Forum](./02/) - Directory search, looking for sensitive information 
 3. [Day 3: Evil Elf](./03/) - Wireshark & Password cracking
+4. [Day 4: Training](./04/) - Basic Linux
+5. [Day 5: Ho-Ho-Hosint](./05/)

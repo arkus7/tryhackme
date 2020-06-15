@@ -149,3 +149,11 @@ Answer:
 ```
 $6$jbosYsU/$qOYToX/hnKGjT0EscuUIiIqF8GHgokHdy/Rg/DaB.RgkrbeBXPdzpHdMLI6cQJLdFlS4gkBMzilDBYcQ
 ```
+
+------
+
+**Main: [The Story](../)**
+
+**Previous: [Day 3: Evil Elf](../03/)**
+
+**Next: [Day 5: Ho-Ho-Hosint](../05/)**
