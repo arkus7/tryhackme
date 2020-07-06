@@ -30,3 +30,4 @@ McElferson jumps out of her seat and yells. This cannot be happening. How is she
 3. [Day 3: Evil Elf](./03/) - Wireshark & Password cracking
 4. [Day 4: Training](./04/) - Basic Linux
 5. [Day 5: Ho-Ho-Hosint](./05/)
+6. [Day 6: Data Elf-iltration](./06/)

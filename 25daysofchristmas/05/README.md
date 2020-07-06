@@ -95,3 +95,11 @@ Answer:
 ```
 Ada Lovelace
 ```
+
+------
+
+**Main: [The Story](../)**
+
+**Previous: [Day 4: Training](../04/)**
+
+**Next: [Day 6: Data Elf-iltration](../06/)**
